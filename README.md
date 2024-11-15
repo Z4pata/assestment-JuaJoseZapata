@@ -54,6 +54,62 @@ This project is an API developed in **C#** with **ASP.NET Core**, using **Entity
 
 ## 📋 **Initial Configuration**.
 ### 1. Clone the Repository
-````bash
+```bash
 git clone https://github.com/Z4pata/assestment-JuaJoseZapata.git
 cd assestment-JuaJoseZapata
+```
+
+## 2. Configure the .env file
+
+Create an .env file in the root directory with the following environment variables:
+```bash
+cp .env.example .env
+```
+
+## 3. Restore Dependencies
+
+```bash
+dotnet restore
+```
+
+## 4. Create the Database
+
+Run the migrations to initialize the database:
+```bash
+dotnet ef migrations add InitialCreate
+dotnet ef database update
+```
+
+## 5. Run the Application
+```bash
+dotnet run
+```
+
+---
+
+## 🧪 Main Endpoints
+### Users
+
+    POST /api/auth/register: New user registration.
+    POST /api/auth/login: User authentication.
+
+### Appointments
+
+    GET /api/appointments: List appointments with filters (date, specialty, etc.).
+    POST /api/appointments: Create a new appointment.
+    PUT /api/appointments/{id}: Edit an existing appointment.
+    DELETE /api/appointments/{id}: Cancel an appointment.
+
+### Availability
+
+    GET /api/doctors/{id}/availability: View availability of a doctor.
+
+---
+
+## 🧑‍💻 Contributions
+
+### If you wish to contribute to the project:
+
+    Create a fork of the repository.
+    Work on a separate branch (feature/new-functionality).
+    Make a pull request with your changes.
