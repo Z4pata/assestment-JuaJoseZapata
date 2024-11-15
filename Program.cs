@@ -1,4 +1,6 @@
 using assestment_JuaJoseZapata.Data;
+using assestment_JuaJoseZapata.Repositories;
+using assestment_JuaJoseZapata.Service;
 using DotNetEnv;
 using Microsoft.EntityFrameworkCore;
 
@@ -20,6 +22,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 });
 
 // Add services to the container.
+
+builder.Services.AddScoped<IUserRepository, UserService>();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
