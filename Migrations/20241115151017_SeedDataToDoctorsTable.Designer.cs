@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using assestment_JuaJoseZapata.Data;
 
@@ -11,9 +12,11 @@ using assestment_JuaJoseZapata.Data;
 namespace assestment_JuaJoseZapata.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241115151017_SeedDataToDoctorsTable")]
+    partial class SeedDataToDoctorsTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -28,8 +31,8 @@ namespace assestment_JuaJoseZapata.Migrations
                         .HasColumnType("int")
                         .HasColumnName("user_id");
 
-                    b.Property<string>("Status")
-                        .HasColumnType("longtext")
+                    b.Property<int?>("Status")
+                        .HasColumnType("int")
                         .HasColumnName("status");
 
                     b.HasKey("UserId");
@@ -40,7 +43,7 @@ namespace assestment_JuaJoseZapata.Migrations
                         new
                         {
                             UserId = 1,
-                            Status = "available"
+                            Status = 0
                         });
                 });
 
@@ -75,13 +78,13 @@ namespace assestment_JuaJoseZapata.Migrations
                         new
                         {
                             Id = 1,
-                            CreationDate = new DateTime(2024, 11, 15, 10, 25, 58, 83, DateTimeKind.Local).AddTicks(5024),
+                            CreationDate = new DateTime(2024, 11, 15, 10, 10, 16, 743, DateTimeKind.Local).AddTicks(3266),
                             Name = "doctor"
                         },
                         new
                         {
                             Id = 2,
-                            CreationDate = new DateTime(2024, 11, 15, 10, 25, 58, 83, DateTimeKind.Local).AddTicks(5069),
+                            CreationDate = new DateTime(2024, 11, 15, 10, 10, 16, 743, DateTimeKind.Local).AddTicks(3307),
                             Name = "patient"
                         });
                 });
@@ -133,19 +136,19 @@ namespace assestment_JuaJoseZapata.Migrations
                         new
                         {
                             Id = 1,
-                            CreationDate = new DateTime(2024, 11, 15, 10, 25, 58, 202, DateTimeKind.Local).AddTicks(7758),
+                            CreationDate = new DateTime(2024, 11, 15, 10, 10, 16, 863, DateTimeKind.Local).AddTicks(83),
                             Email = "zapata.devs@gmail.com",
                             Name = "Juan Jose",
-                            Password = "$2a$11$6K41s5B5.NwRd2ZvBZMece.SIK2YLcHlX0IyyYw44Do9uusdiHLZu",
+                            Password = "$2a$11$jDoL1Iy2QoNC8oWno98W..Cjqj8Yg4OS3QBw/PsaoPLm4CcTlZ9Oi",
                             RoleId = 1
                         },
                         new
                         {
                             Id = 2,
-                            CreationDate = new DateTime(2024, 11, 15, 10, 25, 58, 322, DateTimeKind.Local).AddTicks(7563),
+                            CreationDate = new DateTime(2024, 11, 15, 10, 10, 16, 983, DateTimeKind.Local).AddTicks(6223),
                             Email = "user@example.com",
                             Name = "Test",
-                            Password = "$2a$11$ouWQn96qKV0jP91qPRd5G.oIYM1OaXzCBd1KEn9broRkzH0fuydhm",
+                            Password = "$2a$11$koC9CJomS.oO90vEPgt91ukCCsCqIaRuoxLe6Nwh9CKsV7GSOpUGS",
                             RoleId = 2
                         });
                 });

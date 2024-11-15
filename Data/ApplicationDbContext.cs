@@ -22,6 +22,17 @@ namespace assestment_JuaJoseZapata.Data
         {
             RoleSeeder.Seed(modelBuilder);
             UserSeeder.Seed(modelBuilder);
+            DoctorSeeder.Seed(modelBuilder);
+
+
+
+
+            modelBuilder.Entity<Doctor>()
+            .Property(d => d.Status)
+            .HasConversion(
+                v => v.ToString(),
+                v => (Status)Enum.Parse(typeof(Status), v)
+            );
         }
     }
 }
