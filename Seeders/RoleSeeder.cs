@@ -13,7 +13,8 @@ namespace assestment_JuaJoseZapata.Seeders
         {
             modelBuilder.Entity<Role>().HasData(
                 new Role {Id = 1, Name = "doctor", CreationDate = DateTime.Now, UpdateDate = null},
-                new Role {Id = 2, Name = "patient", CreationDate = DateTime.Now, UpdateDate = null}
+                new Role {Id = 2, Name = "patient", CreationDate = DateTime.Now, UpdateDate = null},
+                new Role {Id = 3, Name = "admin", CreationDate = DateTime.Now, UpdateDate = null}
 
             );
         }
