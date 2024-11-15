@@ -32,11 +32,6 @@ namespace assestment_JuaJoseZapata.Data
 
 
 
-            var timeConverter = new ValueConverter<TimeOnly, string>(
-            v => v.ToString("HH:mm"),
-            v => TimeOnly.Parse(v)
-        );
-
             modelBuilder.Entity<Doctor>()
             .Property(d => d.Status)
             .HasConversion(

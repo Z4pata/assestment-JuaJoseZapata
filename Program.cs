@@ -113,6 +113,7 @@ builder.Services.AddAuthorizationBuilder()
 
 builder.Services.AddScoped<IUserRepository, UserService>();
 builder.Services.AddScoped<IPatientRepository, PatientService>();
+builder.Services.AddScoped<IDoctorAvailabilityRepository, DoctorAvailabilityService>();
 
 
 
