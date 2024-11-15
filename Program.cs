@@ -1,3 +1,4 @@
+using System.Security.Claims;
 using System.Text;
 using assestment_JuaJoseZapata.Data;
 using assestment_JuaJoseZapata.Repositories;
@@ -57,14 +58,7 @@ builder.Services.AddAuthentication(options =>
 });
 
 
-
-
-
-
-// Add services to the container.
-
-builder.Services.AddScoped<IUserRepository, UserService>();
-
+// ---------------
 
 
 // This options to prevent infinite loops in the controllers
@@ -72,6 +66,10 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
 });;
+
+
+
+// ----- Swagger
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -104,6 +102,18 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 });
+
+
+// ------- policy
+builder.Services.AddAuthorizationBuilder()
+    .AddPolicy("DoctorPolicy", policy => policy.RequireClaim(ClaimTypes.Role, "doctor"));
+
+
+// Add services to the container.
+
+builder.Services.AddScoped<IUserRepository, UserService>();
+
+
 
 var app = builder.Build();
 

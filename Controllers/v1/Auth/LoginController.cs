@@ -10,7 +10,7 @@ namespace assestment_JuaJoseZapata.Controllers.v1.Auth
 {
     public partial class AuthController
     {
-         [HttpPost]
+         [HttpPost("login")]
         public async Task<IActionResult> Login (LoginRequest request)
         {
             var user = await _service.GetByEmail(request.Email);
