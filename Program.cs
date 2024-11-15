@@ -1,16 +1,10 @@
 using assestment_JuaJoseZapata.Data;
+using DotNetEnv;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
-
-var app = builder.Build();
+Env.Load();
 
 var DB_HOST = Environment.GetEnvironmentVariable("DB_HOST");
 var DB_NAME = Environment.GetEnvironmentVariable("DB_NAME");
@@ -22,8 +16,19 @@ var stringConnection = $"server={DB_HOST};port={DB_PORT};database={DB_NAME};uid=
 
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
 {
-    options.UseMySql(stringConnection, ServerVersion.Parse("8.0.20-mysql"));
+    options.UseMySql(stringConnection, ServerVersion.Parse("8.0-mysql"));
 });
+
+// Add services to the container.
+
+builder.Services.AddControllers();
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+
+var app = builder.Build();
+
+
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
