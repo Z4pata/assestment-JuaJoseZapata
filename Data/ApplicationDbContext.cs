@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using assestment_JuaJoseZapata.Models;
 using assestment_JuaJoseZapata.Seeders;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace assestment_JuaJoseZapata.Data
 {
@@ -26,9 +27,15 @@ namespace assestment_JuaJoseZapata.Data
             UserSeeder.Seed(modelBuilder);
             DoctorSeeder.Seed(modelBuilder);
             PatientSeeder.Seed(modelBuilder);
+            DoctorAvailabilitySeeder.Seed(modelBuilder);
 
 
 
+
+            var timeConverter = new ValueConverter<TimeOnly, string>(
+            v => v.ToString("HH:mm"),
+            v => TimeOnly.Parse(v)
+        );
 
             modelBuilder.Entity<Doctor>()
             .Property(d => d.Status)

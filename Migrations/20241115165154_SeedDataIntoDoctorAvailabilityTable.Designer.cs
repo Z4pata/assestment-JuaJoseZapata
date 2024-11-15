@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using assestment_JuaJoseZapata.Data;
 
@@ -11,9 +12,11 @@ using assestment_JuaJoseZapata.Data;
 namespace assestment_JuaJoseZapata.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241115165154_SeedDataIntoDoctorAvailabilityTable")]
+    partial class SeedDataIntoDoctorAvailabilityTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -81,40 +84,40 @@ namespace assestment_JuaJoseZapata.Migrations
                         {
                             Id = 1,
                             DoctorId = 1,
-                            EndTime = new TimeOnly(14, 0, 0),
-                            StartTime = new TimeOnly(6, 0, 0),
+                            EndTime = new TimeOnly(0, 0, 0).Add(TimeSpan.FromTicks(14)),
+                            StartTime = new TimeOnly(0, 0, 0).Add(TimeSpan.FromTicks(6)),
                             WeekDay = "monday"
                         },
                         new
                         {
                             Id = 2,
                             DoctorId = 1,
-                            EndTime = new TimeOnly(14, 0, 0),
-                            StartTime = new TimeOnly(6, 0, 0),
+                            EndTime = new TimeOnly(0, 0, 0).Add(TimeSpan.FromTicks(14)),
+                            StartTime = new TimeOnly(0, 0, 0).Add(TimeSpan.FromTicks(6)),
                             WeekDay = "tuesday"
                         },
                         new
                         {
                             Id = 3,
                             DoctorId = 1,
-                            EndTime = new TimeOnly(14, 0, 0),
-                            StartTime = new TimeOnly(6, 0, 0),
+                            EndTime = new TimeOnly(0, 0, 0).Add(TimeSpan.FromTicks(14)),
+                            StartTime = new TimeOnly(0, 0, 0).Add(TimeSpan.FromTicks(6)),
                             WeekDay = "wednesday"
                         },
                         new
                         {
                             Id = 4,
                             DoctorId = 1,
-                            EndTime = new TimeOnly(14, 0, 0),
-                            StartTime = new TimeOnly(6, 0, 0),
+                            EndTime = new TimeOnly(0, 0, 0).Add(TimeSpan.FromTicks(14)),
+                            StartTime = new TimeOnly(0, 0, 0).Add(TimeSpan.FromTicks(6)),
                             WeekDay = "thursday"
                         },
                         new
                         {
                             Id = 5,
                             DoctorId = 1,
-                            EndTime = new TimeOnly(14, 0, 0),
-                            StartTime = new TimeOnly(10, 0, 0),
+                            EndTime = new TimeOnly(0, 0, 0).Add(TimeSpan.FromTicks(14)),
+                            StartTime = new TimeOnly(0, 0, 0).Add(TimeSpan.FromTicks(10)),
                             WeekDay = "friday"
                         });
                 });
@@ -167,13 +170,13 @@ namespace assestment_JuaJoseZapata.Migrations
                         new
                         {
                             Id = 1,
-                            CreationDate = new DateTime(2024, 11, 15, 11, 59, 19, 693, DateTimeKind.Local).AddTicks(7497),
+                            CreationDate = new DateTime(2024, 11, 15, 11, 51, 54, 110, DateTimeKind.Local).AddTicks(1784),
                             Name = "doctor"
                         },
                         new
                         {
                             Id = 2,
-                            CreationDate = new DateTime(2024, 11, 15, 11, 59, 19, 693, DateTimeKind.Local).AddTicks(7534),
+                            CreationDate = new DateTime(2024, 11, 15, 11, 51, 54, 110, DateTimeKind.Local).AddTicks(1827),
                             Name = "patient"
                         });
                 });
@@ -225,19 +228,19 @@ namespace assestment_JuaJoseZapata.Migrations
                         new
                         {
                             Id = 1,
-                            CreationDate = new DateTime(2024, 11, 15, 11, 59, 19, 811, DateTimeKind.Local).AddTicks(9781),
+                            CreationDate = new DateTime(2024, 11, 15, 11, 51, 54, 229, DateTimeKind.Local).AddTicks(2499),
                             Email = "zapata.devs@gmail.com",
                             Name = "Juan Jose",
-                            Password = "$2a$11$LFgx1DXLlsdQLJdDsV1BVO63bCQ8fPoCpeBWbRDOzRqfwmwNTswtq",
+                            Password = "$2a$11$Vt48m4OlQKYb4s/I8lM5hOEmrd0BodTFKfryfC0niLMFOyQwfO7gW",
                             RoleId = 1
                         },
                         new
                         {
                             Id = 2,
-                            CreationDate = new DateTime(2024, 11, 15, 11, 59, 19, 931, DateTimeKind.Local).AddTicks(4377),
+                            CreationDate = new DateTime(2024, 11, 15, 11, 51, 54, 350, DateTimeKind.Local).AddTicks(4086),
                             Email = "user@example.com",
                             Name = "Test",
-                            Password = "$2a$11$BbCMXdsP6UHcxmmiMerOOeRUIwwO/MH7tGH3oxrOpv6XpA/iYIbW2",
+                            Password = "$2a$11$GU4DASkDuPfqatIE1mJ8funnNkYpzS82RHK10fwT/jQ3jvfO66LpC",
                             RoleId = 2
                         });
                 });
