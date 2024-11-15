@@ -20,6 +20,12 @@ namespace assestment_JuaJoseZapata.Controllers.v1.Auth
             var newUser = await _service.Create(request);
 
 
+            if (newUser?.RoleId == 2)
+            {
+                await _patientService.Create(newUser);
+            }
+
+
             return CreatedAtAction(nameof(Create), new { id = newUser?.Id }, new 
             {
                 message = "User created successfully",

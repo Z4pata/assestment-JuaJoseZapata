@@ -39,7 +39,7 @@ namespace assestment_JuaJoseZapata.Service
 
             try
             {
-                _context.Add(newUser);
+                _context.Users.Add(newUser);
                 await _context.SaveChangesAsync();
             }
             catch (Exception ex)

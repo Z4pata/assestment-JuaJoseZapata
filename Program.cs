@@ -112,6 +112,7 @@ builder.Services.AddAuthorizationBuilder()
 // Add services to the container.
 
 builder.Services.AddScoped<IUserRepository, UserService>();
+builder.Services.AddScoped<IPatientRepository, PatientService>();
 
 
 
