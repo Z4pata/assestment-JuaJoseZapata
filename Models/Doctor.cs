@@ -16,7 +16,7 @@ namespace assestment_JuaJoseZapata.Models
 
         [Column("status")]
         [EnumDataType(typeof(Status))]
-        public Status? Status {get;set;}
+        public Status Status {get;set;}
 
         public User? User { get; set; }
 
