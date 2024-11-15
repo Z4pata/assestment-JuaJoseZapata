@@ -20,6 +20,7 @@ namespace assestment_JuaJoseZapata.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             RoleSeeder.Seed(modelBuilder);
+            UserSeeder.Seed(modelBuilder);
         }
     }
 }
