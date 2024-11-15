@@ -9,7 +9,7 @@ namespace assestment_JuaJoseZapata.Repositories
     public interface IUserRepository
     {
         Task<User?> GetById(int id);
-        // Task<User?> GetByEmail(string email);
-        // bool CheckPassword(string password, User user);
+        Task<User?> GetByEmail(string email);
+        bool CheckPassword(string password, User user);
     }
 }

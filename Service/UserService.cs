@@ -18,5 +18,16 @@ namespace assestment_JuaJoseZapata.Service
 
             return user;
         }
+        public async Task<User?> GetByEmail(string email)
+        {
+            var user = await _context.Users.Include(u => u.Role).FirstOrDefaultAsync(u => u.Email == email);
+
+            return user;
+        }
+
+        public bool CheckPassword(string password, User user)
+        {
+            return BCrypt.Net.BCrypt.Verify(password, user.Password);
+        }
     }
 }
