@@ -26,7 +26,6 @@ namespace assestment_JuaJoseZapata.Models
         [Column("end_time")]
         public TimeOnly EndTime { get; set; }
 
-        // Relación de navegación con Doctor
         public Doctor? Doctor { get; set; }
 
     }
