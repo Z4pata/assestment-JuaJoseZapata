@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using assestment_JuaJoseZapata.Data;
 
@@ -11,9 +12,11 @@ using assestment_JuaJoseZapata.Data;
 namespace assestment_JuaJoseZapata.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241115153328_PatientTable")]
+    partial class PatientTable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -53,12 +56,6 @@ namespace assestment_JuaJoseZapata.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("patients");
-
-                    b.HasData(
-                        new
-                        {
-                            UserId = 2
-                        });
                 });
 
             modelBuilder.Entity("assestment_JuaJoseZapata.Models.Role", b =>
@@ -92,13 +89,13 @@ namespace assestment_JuaJoseZapata.Migrations
                         new
                         {
                             Id = 1,
-                            CreationDate = new DateTime(2024, 11, 15, 10, 35, 0, 475, DateTimeKind.Local).AddTicks(3366),
+                            CreationDate = new DateTime(2024, 11, 15, 10, 33, 27, 973, DateTimeKind.Local).AddTicks(6615),
                             Name = "doctor"
                         },
                         new
                         {
                             Id = 2,
-                            CreationDate = new DateTime(2024, 11, 15, 10, 35, 0, 475, DateTimeKind.Local).AddTicks(3408),
+                            CreationDate = new DateTime(2024, 11, 15, 10, 33, 27, 973, DateTimeKind.Local).AddTicks(6666),
                             Name = "patient"
                         });
                 });
@@ -150,19 +147,19 @@ namespace assestment_JuaJoseZapata.Migrations
                         new
                         {
                             Id = 1,
-                            CreationDate = new DateTime(2024, 11, 15, 10, 35, 0, 594, DateTimeKind.Local).AddTicks(508),
+                            CreationDate = new DateTime(2024, 11, 15, 10, 33, 28, 94, DateTimeKind.Local).AddTicks(6907),
                             Email = "zapata.devs@gmail.com",
                             Name = "Juan Jose",
-                            Password = "$2a$11$vaS.10P3zWLE6Hd7z3vXEuuBFqp6C1loHTh0JMQQaDETM8qTzqiM.",
+                            Password = "$2a$11$kiJBYxHvYZ1XdRrCgGa18ebZ79vyrj2Q0XuZZsEZmgYLpm0yknQY.",
                             RoleId = 1
                         },
                         new
                         {
                             Id = 2,
-                            CreationDate = new DateTime(2024, 11, 15, 10, 35, 0, 713, DateTimeKind.Local).AddTicks(1646),
+                            CreationDate = new DateTime(2024, 11, 15, 10, 33, 28, 217, DateTimeKind.Local).AddTicks(5204),
                             Email = "user@example.com",
                             Name = "Test",
-                            Password = "$2a$11$NC4PJbRi2wxYgOhN775JhO/xckWBdbrOJzWbe5Wsm47UqugCJ0XJO",
+                            Password = "$2a$11$ygD4TgmrAfF0Io2op5wKlOw68qiOAezNq9gZ2GIUTvisLZIIxoBSe",
                             RoleId = 2
                         });
                 });

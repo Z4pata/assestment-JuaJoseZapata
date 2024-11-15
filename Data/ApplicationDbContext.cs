@@ -17,12 +17,14 @@ namespace assestment_JuaJoseZapata.Data
         public required DbSet<Role> Roles { get; set; }
         public required DbSet<User> Users { get; set; }
         public required DbSet<Doctor> Doctors { get; set; }
+        public required DbSet<Patient> Patients { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             RoleSeeder.Seed(modelBuilder);
             UserSeeder.Seed(modelBuilder);
             DoctorSeeder.Seed(modelBuilder);
+            PatientSeeder.Seed(modelBuilder);
 
 
 
