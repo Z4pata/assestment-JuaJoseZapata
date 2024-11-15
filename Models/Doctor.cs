@@ -15,14 +15,14 @@ namespace assestment_JuaJoseZapata.Models
         public int UserId { get; set; }
 
         [Column("status")]
-        [EnumDataType(typeof(status))]
-        public status? Status {get;set;}
+        [EnumDataType(typeof(Status))]
+        public Status? Status {get;set;}
 
         public User? User { get; set; }
 
     }
 
-    public enum status
+    public enum Status
     {
         available,
         unavailable
