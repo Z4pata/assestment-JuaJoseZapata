@@ -18,6 +18,7 @@ namespace assestment_JuaJoseZapata.Data
         public required DbSet<User> Users { get; set; }
         public required DbSet<Doctor> Doctors { get; set; }
         public required DbSet<Patient> Patients { get; set; }
+        public required DbSet<DoctorAvailability> DoctorsAvailabilities { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -34,6 +35,13 @@ namespace assestment_JuaJoseZapata.Data
             .HasConversion(
                 v => v.ToString(),
                 v => (Status)Enum.Parse(typeof(Status), v)
+            );
+
+            modelBuilder.Entity<DoctorAvailability>()
+            .Property(d => d.WeekDay)
+            .HasConversion(
+                v => v.ToString(),
+                v => (WeekDays)Enum.Parse(typeof(WeekDays), v)
             );
         }
     }
