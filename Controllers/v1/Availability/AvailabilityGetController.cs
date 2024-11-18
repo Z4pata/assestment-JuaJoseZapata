@@ -10,7 +10,7 @@ namespace assestment_JuaJoseZapata.Controllers.v1.Availability
     public partial class AvailabilityController
     {
         [HttpGet]
-        [Authorize(Policy = "AdminPolicy")]
+        [Authorize(Policy = "DoctorPolicy")]
         public async Task<IActionResult> GetAllByDoctorId(int id)
         {
             var availabilities = await _service.GetAvailabilityByDoctorId(id);
