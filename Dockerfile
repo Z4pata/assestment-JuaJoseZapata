@@ -28,7 +28,7 @@ ENV ASPNETCORE_ENVIRONMENT=Development
 # Copia los archivos de la fase de construcción
 COPY --from=build /app/out .
 
-# Expone el puerto 80 para que la API sea accesible desde fuera del contenedor
+# Expone el puerto 8080 para que la API sea accesible desde fuera del contenedor
 EXPOSE 8080
 
 # Comando para ejecutar la API de .NET
