@@ -64,7 +64,7 @@ builder.Services.AddAuthentication(options =>
 // This options to prevent infinite loops in the controllers
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
-    options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+    // options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
 });;
 
 

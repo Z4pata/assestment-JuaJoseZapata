@@ -8,12 +8,12 @@ namespace assestment_JuaJoseZapata.DTOs.Response
 {
     public class AvailabilityResponse
     {
-        public int Id;
-        public string? WeekDay;
-        public TimeOnly StartTime;
-        public TimeOnly EndTime;
-        public string? DoctorName;
-        public string? DoctorEmail;
+        public int Id {get; set;}
+        public string? WeekDay{get; set;}
+        public TimeOnly StartTime{get; set;}
+        public TimeOnly EndTime{get; set;}
+        public string? DoctorName{get; set;}
+        public string? DoctorEmail{get; set;}
 
     }
 }

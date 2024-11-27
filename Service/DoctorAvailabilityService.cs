@@ -13,15 +13,24 @@ namespace assestment_JuaJoseZapata.Service
     public class DoctorAvailabilityService(ApplicationDbContext context) : IDoctorAvailabilityRepository
     {
         private readonly ApplicationDbContext _context = context;
-        public async Task<ICollection<DoctorAvailability>?> GetAvailabilityByDoctorId(int id)
+        public async Task<ICollection<AvailabilityResponse>?> GetAvailabilityByDoctorId(int id)
         {
             var availabilities = await _context.DoctorsAvailabilities.Include(d => d.Doctor)
-            .ThenInclude(d => d.User)
-            .Where(d => d.DoctorId == id)
-            .ToListAsync();
+                .ThenInclude(d => d.User)
+                .Where(d => d.DoctorId == id)
+                .Select(a => new AvailabilityResponse
+                {
+                    Id = a.Id,
+                    WeekDay = a.WeekDay.ToString(),
+                    StartTime = a.StartTime,
+                    EndTime = a.EndTime,
+                    DoctorName = a.Doctor.User.Name ?? "No Name",
+                    DoctorEmail = a.Doctor.User.Email ?? "No Email"
+                })
+                .ToListAsync();
 
             return availabilities;
         }
-    
+
     }
 }

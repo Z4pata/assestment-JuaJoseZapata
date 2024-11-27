@@ -9,6 +9,6 @@ namespace assestment_JuaJoseZapata.Repositories
 {
     public interface IDoctorAvailabilityRepository
     {
-        Task<ICollection<DoctorAvailability>?> GetAvailabilityByDoctorId(int id);
+        Task<ICollection<AvailabilityResponse>?> GetAvailabilityByDoctorId(int id);
     }
 }
