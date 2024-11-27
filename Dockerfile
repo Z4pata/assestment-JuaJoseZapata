@@ -25,11 +25,6 @@ COPY .env .env
 
 ENV ASPNETCORE_ENVIRONMENT=Development
 
-
-ENV JWT_KEY=jhQYUT3287UIRM3-2Q5R32125JÑOEWR-SDGS.443643SDAADFASFA23OP5-ADF-_AVRRWW
-ENV JWT_ISSUER = http://localhost:8080
-ENV JWT_EXPIRES_IN = 30
-
 # Copia los archivos de la fase de construcción
 COPY --from=build /app/out .
 
